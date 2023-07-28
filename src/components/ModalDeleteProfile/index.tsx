@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Modal } from "../Modal";
-import { StyledModal } from "./style";
+import { StyledModal } from "../Modal/styles";
 import { UserContext } from "../../contexts/UserContext";
 
 interface ModalProps {

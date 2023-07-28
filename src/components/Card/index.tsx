@@ -2,12 +2,14 @@ import { useState } from "react";
 import { TContact } from "../../contexts/@types";
 import { StyledCard } from "./styles";
 import { ModalDeleteContact } from "../ModalDeleteContact";
+import { ModalEditContact } from "../ModalEditContact";
 
 interface CardProps {
   contact: TContact;
 }
 
 export const Card = ({ contact }: CardProps) => {
+  const [isOpenModalEdit, setIsOpenModalEdit] = useState(false);
   const [isOpenModalDelete, setIsOpenModalDelete] = useState(false);
 
   const toggleModal = (
@@ -30,7 +32,12 @@ export const Card = ({ contact }: CardProps) => {
         </p>
 
         <div>
-          <button className="btnEditar">Editar</button>
+          <button
+            className="btnEditar"
+            onClick={() => toggleModal(isOpenModalEdit, setIsOpenModalEdit)}
+          >
+            Editar
+          </button>
           <button
             className="btnExcluir"
             onClick={() => toggleModal(isOpenModalDelete, setIsOpenModalDelete)}
@@ -39,6 +46,13 @@ export const Card = ({ contact }: CardProps) => {
           </button>
         </div>
       </StyledCard>
+      {isOpenModalEdit && (
+        <ModalEditContact
+          toggleModal={() => toggleModal(isOpenModalEdit, setIsOpenModalEdit)}
+          contact={contact}
+          setIsOpenModal={setIsOpenModalEdit}
+        />
+      )}
       {isOpenModalDelete && (
         <ModalDeleteContact
           toggleModal={() =>

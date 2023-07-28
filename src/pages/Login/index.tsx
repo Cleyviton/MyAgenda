@@ -1,10 +1,10 @@
 import { LoginForm } from "../../components/Form/LoginForm";
+import { StyledMain } from "./styles";
 
 export const Login = () => {
   return (
-    <main>
-      <h2>Login</h2>
+    <StyledMain>
       <LoginForm />
-    </main>
+    </StyledMain>
   );
 };

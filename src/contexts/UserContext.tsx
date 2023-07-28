@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { IProvidersProps, IUserContext, TUser } from "./@types";
+import { IProvidersProps, IUserContext, TUser, TUserRequest } from "./@types";
 import { TRegisterData } from "../components/Form/RegisterForm/validator";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
@@ -74,6 +74,35 @@ export const UserProvider = ({ children }: IProvidersProps) => {
     }
   };
 
+  const userLogout = () => {
+    localStorage.removeItem("@MyAgenda:TOKEN");
+    navigate("/");
+    toast.success("Usuário deslogado com sucesso!", {
+      autoClose: 1000,
+    });
+  };
+
+  const updateUser = async (userId: number, data: TUserRequest) => {
+    const token = localStorage.getItem("@MyAgenda:TOKEN");
+
+    try {
+      const response = await api.patch(`users/${userId}`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      setUser(response.data);
+      toast.success("Dados do usuário atualizados com sucesso!", {
+        autoClose: 1000,
+      });
+    } catch (error) {
+      toast.error("Email já existente", {
+        autoClose: 1000,
+      });
+    }
+  };
+
   const deleteUser = async (userId: number) => {
     const token = localStorage.getItem("@MyAgenda:TOKEN");
 
@@ -88,7 +117,16 @@ export const UserProvider = ({ children }: IProvidersProps) => {
   };
 
   return (
-    <UserContext.Provider value={{ userRegister, userLogin, user, deleteUser }}>
+    <UserContext.Provider
+      value={{
+        userRegister,
+        userLogin,
+        userLogout,
+        user,
+        updateUser,
+        deleteUser,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

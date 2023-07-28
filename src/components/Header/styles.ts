@@ -34,7 +34,7 @@ export const StyledHeader = styled.header`
     > div {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 1px;
     }
   }
   .box--icons {
@@ -47,6 +47,8 @@ export const StyledHeader = styled.header`
     transition: 0.3s;
     &:hover {
       color: var(--color-brand-1);
+
+      transform: scale(1.2);
     }
   }
   .delete {

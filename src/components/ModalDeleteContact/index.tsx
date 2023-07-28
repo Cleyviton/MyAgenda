@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { TContact } from "../../contexts/@types";
 import { Modal } from "../Modal";
-import { StyledModal } from "./style";
+import { StyledModal } from "../Modal/styles";
 import { ContactContext } from "../../contexts/ContactContext";
 
 interface ModalProps {
