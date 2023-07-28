@@ -27,7 +27,7 @@ export const RegisterForm = () => {
       <input
         type="text"
         id="name"
-        className={errors.password && "error"}
+        className={errors.name && "error"}
         placeholder="Digite o seu nome..."
         {...register("name")}
       />
@@ -55,7 +55,10 @@ export const RegisterForm = () => {
         {...register("password")}
       />
 
-      <label htmlFor="confirmPassword" className={errors.password && "error"}>
+      <label
+        htmlFor="confirmPassword"
+        className={errors.confirmPassword && "error"}
+      >
         * Confirmar senha:
       </label>
       <input
@@ -66,13 +69,13 @@ export const RegisterForm = () => {
         {...register("confirmPassword")}
       />
 
-      <label htmlFor="phone" className={errors.password && "error"}>
+      <label htmlFor="phone" className={errors.phone && "error"}>
         * telefone:
       </label>
       <input
         type="text"
         id="phone"
-        className={errors.email && "error"}
+        className={errors.phone && "error"}
         placeholder="Digite o seu telefone..."
         {...register("phone")}
       />
