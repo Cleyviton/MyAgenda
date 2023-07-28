@@ -2,15 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
    :root {
-    --color-blue-900: #0d47a1;
-    --color-blue-800: #1565c0;
-    --color-blue-700: #1976d2;
-    --color-blue-600: #1e88e5;
-    --color-blue-500: #2196f3;
-    --color-blue-400: #42a5f5;
-    --color-blue-300: #64b5f6;
-    --color-blue-200: #90caf9;
-    --color-blue-100: #bbdefb;
+    --color-brand-1:#0d47a1;
+    --color-brand-2: #1565c0;
+    --color-brand-3: #1976d2;
+    --color-red-1: #861A1A;
     --color-gray-900: #212121;
     --color-gray-800: #424242;
     --color-gray-700: #616161;
@@ -24,13 +19,9 @@ export default createGlobalStyle`
     font-size: 60%;   
   }
 
-  /* font-size: 16px;
-  1rem = 10px
-  */
-
   @media (min-width: 700px) {
     :root {
-      font-size: 62.5%; // root font-size: 10px;
+      font-size: 62.5%;
     }
   }
   
@@ -39,6 +30,7 @@ export default createGlobalStyle`
     padding: 0;
     outline:0;
     box-sizing: border-box;
+    list-style: none;
   }
 
   body,html{
@@ -47,7 +39,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: var(--color-gray-900);
+    background: var(--color-gray-700);
     color: var(--color-gray-300);
     -webkit-font-smoothing: antialiased;
 
@@ -65,5 +57,21 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px var(--light-purple);
+  background-color: var(--light-gray)
+  }
+
+  ::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: var(--light-gray);
+  }
+
+  ::-webkit-scrollbar-thumb {
+  background-color: var(--purple);
+  border: 1px solid var(--light-purple);
   }
 `;
