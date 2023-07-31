@@ -7,13 +7,15 @@
 <p> Em seguida, dentro da pasta raiz do projeto, instale o pacote de <strong>dependências</strong> rodando o seguinte comando no seu terminal:</p>
 
 ```shell
-npm install
+utilizando npm: npm install
+utilizando yarn: yarn
 ```
 
 <p>Execute o comando a seguir para rodar o projeto:</p>
 
 ```shell
-npm run dev
+utilizando npm: npm run dev
+utilizando yarn: yarn dev
 ```
 
 <h3>É só isso? Sim! Parabéns!! :)<h3>
