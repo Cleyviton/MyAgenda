@@ -17,9 +17,6 @@ utilizando yarn: yarn
 utilizando npm: npm run dev
 utilizando yarn: yarn dev
 ```
-utilizando npm:  ```shell
-npm run dev
-```
 
 <h3>É só isso? Sim! Parabéns!! :)<h3>
 
