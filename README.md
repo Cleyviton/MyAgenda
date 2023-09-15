@@ -25,3 +25,5 @@ utilizando yarn: yarn dev
 ```shell
 Local: http://localhost:5173/
 ```
+
+<p>Repositório backend: https://github.com/Cleyviton/MyAgenda-bff</p>
